@@ -1,0 +1,19 @@
+---
+import Navigation from "../components/Navigation.astro";
+const { frontmatter } = Astro.props;
+---
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta charset="utf-8" />
+		<title>{frontmatter.title}</title>
+	</head>
+</html>
+<body>
+	<Navigation />
+	<h1>{frontmatter.title} by {frontmatter.author}</h1>
+	<h2>Written on {frontmatter.pubDate}</h2>
+	<p>Summary: {frontmatter.description}</p>
+	<slot />
+</body>
